@@ -16,6 +16,6 @@ Here is the application: [My Github Followers](https://my-github-followers.herok
 [LinkedIn](https://www.linkedin.com/in/andrewdpohl)
 
 Here are a few projects I have built:  
-* [Senator Accountability Project](https://senatoraccountability.herokuapp.com) - An application that allows a user to check in on the latest voting record information related to any of the 100 Senators.  Built using Ruby on Rails | Bootstrap | 
+* [Senator Accountability Project](https://senatoraccountability.herokuapp.com) - An application that allows a user to check in on the latest voting record information related to any of the 100 Senators.  Built using Ruby on Rails | Bootstrap | NYT API | GovTrack.us API
 * [whutzOpen?](https://whutzopen.herokuapp.com) - An application that allows a user to locate locales that happent to be currently open when they are visiting any particular city.  Built using Express.JS | Bootstrap | Mapbox API | Foursquare API
-* [Sell The Heart Records](https://www.selltheheartrecords.com)
+* [Sell The Heart Records](https://www.selltheheartrecords.com) - Static website I built for the record label that I operate out of my bedroom.  I leveraged the power of Gulp when building this site, which also relies heavily on Bootstrap and jQuery for much of the features and styling
