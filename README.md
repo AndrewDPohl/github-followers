@@ -12,7 +12,7 @@ I have the main functionality working the way I would like, but I would like to 
 # Links
 Here is the application: [My Github Followers](https://my-github-followers.herokuapp.com)
 
-[My Website](http://www.andrewdpohl.com)
+[My Website](http://www.andrewdpohl.com) | 
 [LinkedIn](https://www.linkedin.com/in/andrewdpohl)
 
 Here are a few projects I have built:  
