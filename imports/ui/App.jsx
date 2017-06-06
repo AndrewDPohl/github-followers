@@ -11,7 +11,8 @@ export default class App extends Component {
                         follower: [],
                         count: 1,
                         noMore: false,
-                        notFound: false
+                        notFound: false,
+                        noFollowers: false
                      };
   }
 
@@ -21,7 +22,8 @@ export default class App extends Component {
                         count: 1,
                         user: '',
                         noMore: false,
-                        notFound: false
+                        notFound: false,
+                        noFollowers: false
                     });
         this.refs.textInput.value = '';
     }
@@ -51,7 +53,12 @@ export default class App extends Component {
     
         return $.getJSON('https://api.github.com/users/' + input + '/followers')
             .success((data) => {
-                if (data.length < 30) {
+                if (data.length === 0) {
+                    this.setState({ 
+                                    noFollowers: true,
+                                    noMore: true 
+                                });
+                } else if (data.length < 30) {
                     this.setState({ noMore: true });
                 }
                 console.log(data);
@@ -102,6 +109,9 @@ export default class App extends Component {
                         }
                         { this.state.notFound ?
                             <h2 className="not-found">That User Was Not Found, Try Again</h2> : ''
+                        }
+                        { this.state.noFollowers ?
+                            <h2 className="no-followers">There are no followers for this user, Try Again</h2> : ''
                         }
                     </header>
                 </div>
