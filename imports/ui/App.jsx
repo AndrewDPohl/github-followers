@@ -12,7 +12,8 @@ export default class App extends Component {
                         count: 1,
                         noMore: false,
                         notFound: false,
-                        noFollowers: false
+                        noFollowers: false,
+                        followerCount: 0
                      };
   }
 
@@ -23,7 +24,8 @@ export default class App extends Component {
                         user: '',
                         noMore: false,
                         notFound: false,
-                        noFollowers: false
+                        noFollowers: false,
+                        followerCount: 0
                     });
         this.refs.textInput.value = '';
     }
@@ -35,11 +37,11 @@ export default class App extends Component {
             .then((data) => {
                 if(data.length === 0) {
                     this.setState({ noMore: true });
-                    console.log(this.state.noMore);
                 } else {
-                    console.log(data);
-                    console.log(this.state.count);
-                    this.setState({follower: this.state.follower.concat(data)});
+                    this.setState({
+                                    follower: this.state.follower.concat(data),
+                                    followerCount: this.state.followerCount + data.length
+                                });
                 }
             });
     }
@@ -59,12 +61,15 @@ export default class App extends Component {
                                     noMore: true 
                                 });
                 } else if (data.length < 30) {
-                    this.setState({ noMore: true });
+                    this.setState({ 
+                                    noMore: true,
+                                    followerCount: data.length
+                                });
                 }
-                console.log(data);
                 this.setState({ 
                                 follower: data, 
-                                user: input 
+                                user: input,
+                                followerCount: data.length 
                             });
             }).fail((error) => {
                 this.setState({ 
@@ -105,7 +110,7 @@ export default class App extends Component {
                             <button className={"load-more btn btn-default " + (this.state.noMore ? 'hide' : 'show')} onClick={this.loadMore.bind(this)}>Load More</button> : ''
                         }
                         { userName ? 
-                            <h2 className="userName">The user you're looking up is <a href={"https://github.com/" + userName + ""} target="_blank"><span className="name">{ userName }</span></a></h2> : ''
+                            <h2 className="userName">The user you're looking up is <a href={"https://github.com/" + userName + ""} target="_blank"><span className="name">{ userName }</span></a> and has { this.state.followerCount } followers</h2> : ''
                         }
                         { this.state.notFound ?
                             <h2 className="not-found">That User Was Not Found, Try Again</h2> : ''
