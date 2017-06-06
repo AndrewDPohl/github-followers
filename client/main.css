@@ -65,12 +65,26 @@ button {
 	display: inline-block !important;
 }
 
-@media (max-width: 730px) {
-	.followers {
-		margin-top: 370px;
+@media (max-width: 795px) {
+	.main-title {
+		font-size: 20px;
 	}
 
+	.userName, .name {
+		font-size: 15px;
+	}
+
+	.followers {
+		margin-top: 250px;
+	}
+
+	.form-control {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 730px) {
 	.follower-login {
-		font-size: 20px;
+		font-size: 15px;
 	}
 }

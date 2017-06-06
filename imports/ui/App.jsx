@@ -72,7 +72,7 @@ export default class App extends Component {
         const userName = this.state.user;
 
         const followers = this.state.follower.map((item, i) => {
-            return <div key={i} className="each-follower col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            return <div key={i} className="each-follower col-xs-6 col-sm-4 col-lg-2">
                 <a href={item.html_url} target="_blank" className="follower-link">
                     <h1 className="follower-login">{item.login}</h1>  
                     <img src={item.avatar_url} className="follower-image" />
