@@ -35,6 +35,7 @@ button {
 .userName, .not-found, .no-followers {
 	font-family: 'Noto Serif', serif;
 	text-transform: uppercase;
+	font-size: 20px;
 }
 
 .name {
@@ -74,7 +75,7 @@ button {
 	}
 
 	.followers {
-		margin-top: 250px;
+		margin-top: 220px;
 	}
 
 	.form-control {
@@ -85,5 +86,11 @@ button {
 @media (max-width: 730px) {
 	.follower-login {
 		font-size: 15px;
+	}
+}
+
+@media (max-width: 435px) {
+	.followers {
+		margin-top: 230px;
 	}
 }
